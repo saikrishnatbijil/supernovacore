@@ -38,7 +38,7 @@ app.get("/weather", (req, res) => {
         hour12: true,
       });
 
-      res.send({
+      res.json({
         temp: Math.round(response.data.main.temp).toString(),
         humidity: response.data.main.humidity.toString(),
         description: response.data.weather[0].description,
