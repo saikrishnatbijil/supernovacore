@@ -41,7 +41,7 @@ app.get("/weather", (req, res) => {
       res.json({
         temp: Math.round(response.data.main.temp).toString(),
         humidity: response.data.main.humidity.toString(),
-        description: response.data.weather[0].description,
+        description: response.data.weather[0].main,
         feels_like: Math.round(response.data.main.feels_like).toString(),
         sunrise: formattedSunriseTime,
         sunset: formattedSunsetTime,
@@ -80,7 +80,7 @@ app.get('/weatherCity', (req, res) => {
       res.json({
         temp: Math.round(response.data.main.temp).toString(),
         humidity: response.data.main.humidity.toString(),
-        description: response.data.weather[0].description,
+        description: response.data.weather[0].main,
         feels_like: Math.round(response.data.main.feels_like).toString(),
         sunrise: formattedSunriseTime,
         sunset: formattedSunsetTime,
